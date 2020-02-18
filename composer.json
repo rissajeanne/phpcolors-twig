@@ -1,0 +1,22 @@
+{
+  "name": "rissajeanne/phpcolors-twig",
+  "version": "0.1.0",
+  "description": "A Twig extension wrapper for https://github.com/mexitek/phpColors",
+  "type": "yii-module",
+  "license": "MIT",
+  "authors": [
+      {
+          "name": "Marissa Yuen",
+          "homepage": "https://agathongroup.com"
+      }
+  ],
+  "require": {
+    "craftcms/cms": "^3.4.0",
+    "mexitek/phpcolors": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "rissajeanne\\phpcolors-twig\\": "src/"
+    }
+  }
+}
