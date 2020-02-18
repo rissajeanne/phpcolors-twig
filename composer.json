@@ -39,6 +39,6 @@
         "hasCpSection": false,
         "documentationUrl": "https://github.com/rissajeanne/phpcolors-twig/blob/master/README.md",
         "class": "rissajeanne\\phpcolorstwig\\PHPColors",
-        "changelogUrl": "https://raw.githubusercontent.com/rissajeanne/phpcolors-twig/master/CHANGELOG.md",
+        "changelogUrl": "https://raw.githubusercontent.com/rissajeanne/phpcolors-twig/master/CHANGELOG.md"
     }
 }
