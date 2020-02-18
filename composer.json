@@ -1,22 +1,44 @@
 {
-  "name": "rissajeanne/phpcolors-twig",
-  "version": "0.1.0",
-  "description": "A Twig extension wrapper for https://github.com/mexitek/phpColors",
-  "type": "yii-module",
-  "license": "MIT",
-  "authors": [
-      {
-          "name": "Marissa Yuen",
-          "homepage": "https://agathongroup.com"
-      }
-  ],
-  "require": {
-    "craftcms/cms": "^3.4.0",
-    "mexitek/phpcolors": "dev-master"
-  },
-  "autoload": {
-    "psr-4": {
-      "rissajeanne\\phpcolors-twig\\": "src/"
+    "name": "rissajeanne/phpcolors-twig",
+    "description": "A Twig extension wrapper for https://github.com/mexitek/phpColors",
+    "type": "craft-plugin",
+    "version": "0.1.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "phpcolors"
+    ],
+    "support": {
+        "email": "marissa@agathongroup.com",
+        "issues": "https://github.com/rissajeanne/phpcolors-twig/issues?state=open",
+        "source": "https://github.com/rissajeanne/phpcolors-twig",
+        "docs": "https://github.com/rissajeanne/phpcolors-twig/blob/master/README.md"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marissa Yuen",
+            "homepage": "https://agathongroup.com"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0",
+        "mexitek/phpcolors": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "rissajeanne\\phpcolorstwig\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "PHPColors",
+        "handle": "phpcolors-twig",
+        "hasCpSettings": false,
+        "hasCpSection": false,
+        "documentationUrl": "https://github.com/rissajeanne/phpcolors-twig/blob/master/README.md",
+        "class": "rissajeanne\\phpcolorstwig\\PHPColors",
+        "changelogUrl": "https://raw.githubusercontent.com/rissajeanne/phpcolors-twig/master/CHANGELOG.md",
     }
-  }
 }

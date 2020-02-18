@@ -1,0 +1,12 @@
+--TEST--
+"isDark" function
+--TEMPLATE--
+{{ isDark("#1D1D1D") }}
+{{ isDark("#333333") }}
+{{ isDark("#F1AB2B") }}
+--DATA--
+return []
+--EXPECT--
+true
+true
+false
