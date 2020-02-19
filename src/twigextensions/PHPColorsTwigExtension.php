@@ -25,6 +25,14 @@ use Craft;
  */
 class PHPColorsTwigExtension extends AbstractExtension
 {
+    // Private Properties
+    // =========================================================================
+
+    /**
+     * @var Mexitek\PHPColors\Color
+     */
+    private $_color = null;
+
     // Public Methods
     // =========================================================================
 
@@ -42,16 +50,42 @@ class PHPColorsTwigExtension extends AbstractExtension
     public function getFunctions()
     {
         return [
-            new TwigFunction('isDark', [$this, 'getIsDark']),
+            new TwigFunction('isDark', [$this, 'isDark']),
+            new TwigFunction('isLight', [$this, 'isLight']),
         ];
     }
+
+    // Protected Methods
+    // =========================================================================
 
     /**
      * Is this a dark color value?
      */
-    public function getIsDark(string $hex = '#000000'): bool
+    protected function isDark(string $hex = '#000000'): bool
     {
-        $color = new Color($hex);
-        return $color->isDark();
+        $this->initialize($hex);
+        return $this->_color->isDark();
+    }
+
+    /**
+     * Is this a light color value?
+     */
+    protected function isLight(string $hex = '#000000'): bool
+    {
+        $this->initialize($hex);
+        return $this->_color->isLight();
+    }
+
+    // Private Methods
+    // =========================================================================
+
+    /**
+     * @return void
+     */
+    private function initialize(string $hex = '#000000')
+    {
+        if (!($this->_color && $this->_color->getHex() == str_replace('#', '', $hex))) {
+            $this->_color = new Color($hex);
+        }
     }
 }
