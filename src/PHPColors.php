@@ -14,10 +14,12 @@ use rissajeanne\phpcolorstwig\twigextensions\PHPColorsTwigExtension;
 
 use Craft;
 use craft\base\Plugin;
+use craft\log\FileTarget;
 use craft\services\Plugins;
 use craft\events\PluginEvent;
 
 use yii\base\Event;
+use yii\log\Logger;
 
 /**
  * Class PHPColors
@@ -69,6 +71,11 @@ class PHPColors extends Plugin
             }
         );
 
+        Craft::getLogger()->dispatcher->targets[] = new FileTarget([
+            'logFile' => '@storage/logs/phpcolors.log',
+            'categories' => ['phpcolors-twig']
+        ]);
+
         Craft::info(
             Craft::t(
                 'phpcolors-twig',
@@ -77,6 +84,14 @@ class PHPColors extends Plugin
             ),
             __METHOD__
         );
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public static function log($message)
+    {
+        Craft::getLogger()->log($message, Logger::LEVEL_INFO, 'phpcolors-twig');
     }
 
     // Protected Methods
