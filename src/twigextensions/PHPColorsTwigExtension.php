@@ -55,13 +55,10 @@ class PHPColorsTwigExtension extends AbstractExtension
         ];
     }
 
-    // Protected Methods
-    // =========================================================================
-
     /**
      * Is this a dark color value?
      */
-    protected function isDark(string $hex = '#000000'): bool
+    public function isDark(string $hex = '#000000'): bool
     {
         $this->initialize($hex);
         return $this->_color->isDark();
@@ -70,7 +67,7 @@ class PHPColorsTwigExtension extends AbstractExtension
     /**
      * Is this a light color value?
      */
-    protected function isLight(string $hex = '#000000'): bool
+    public function isLight(string $hex = '#000000'): bool
     {
         $this->initialize($hex);
         return $this->_color->isLight();
