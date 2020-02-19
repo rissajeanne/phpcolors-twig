@@ -71,7 +71,7 @@ class PHPColors extends Plugin
 
         Craft::info(
             Craft::t(
-                'phpcolorstwig',
+                'phpcolors-twig',
                 '{name} plugin loaded',
                 ['name' => $this->name]
             ),
